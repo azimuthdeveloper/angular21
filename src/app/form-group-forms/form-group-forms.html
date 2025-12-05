@@ -1,0 +1,28 @@
+<h2>Reactive forms</h2>
+
+<form style="display: flex; flex-direction: column; width: 300px; gap: 10px" [formGroup]="formGroup">
+    <div style="display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
+        <label for="catName">Cat Name</label>
+        <input type="text" [formControl]="formGroup.controls.name" id="catName">
+    </div>
+
+    <div style="display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
+        <label for="catColour">Colour</label>
+        <select [formControl]="formGroup.controls.colours" id="catColour">
+            @for (colour of colours; track colour){
+                <option value="{{colour}}">{{colour}}</option>
+            }
+        </select>
+    </div>
+
+    <div style="display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
+        <label for="catBreed">Breed</label>
+        <select [formControl]="formGroup.controls.breed" id="catBreed">
+            @for (breed of breed; track breed){
+                <option value="{{breed}}">{{breed}}</option>
+            }
+        </select>
+    </div>
+</form>
+
+{{formGroup.controls.breed.value.length}}

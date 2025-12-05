@@ -1,1 +1,6 @@
+<div style="display: flex; flex-direction: row; gap: 10px">
+    @for (route of routes; track route.title){
+        <button [routerLink]="route.path">{{route.title}}</button>
+    }
+</div>
 <router-outlet />

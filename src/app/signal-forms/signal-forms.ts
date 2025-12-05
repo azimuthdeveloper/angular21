@@ -27,8 +27,8 @@ export class SignalForms {
 
 }
 
-const colours = ['white', 'black', 'grey', 'brown'] as const;
-const breed = ['bengal', 'moggie', 'persian', 'siamese', 'shorthair', 'ragdoll', 'unknown'] as const;
+export const colours = ['white', 'black', 'grey', 'brown'] as const;
+export const breed = ['bengal', 'moggie', 'persian', 'siamese', 'shorthair', 'ragdoll', 'unknown'] as const;
 
 
 export interface CatRegistrationData{
