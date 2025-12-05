@@ -1,0 +1,28 @@
+<h2>Signal forms</h2>
+
+<form style="display: flex; flex-direction: column; width: 300px; gap: 10px">
+  <div style="display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
+    <label for="catName">Cat Name</label>
+    <input type="text" [field]="registrationForm.name" id="catName">
+  </div>
+
+  <div style="display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
+    <label for="catColour">Colour</label>
+    <select [field]="registrationForm.colour" id="catColour">
+      @for (colour of colours; track colour){
+        <option value="{{colour}}">{{colour}}</option>
+      }
+    </select>
+  </div>
+
+  <div style="display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
+    <label for="catBreed">Breed</label>
+    <select [field]="registrationForm.breed" id="catBreed">
+      @for (breed of breeds; track breed){
+        <option value="{{breed}}">{{breed}}</option>
+      }
+    </select>
+  </div>
+</form>
+
+{{registrationForm.name().value().length}}
