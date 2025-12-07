@@ -1,5 +1,5 @@
 import {Component, signal} from '@angular/core';
-import {Field, form} from '@angular/forms/signals';
+import {Field, form, required} from '@angular/forms/signals';
 import {JsonPipe} from '@angular/common';
 
 @Component({
@@ -18,12 +18,16 @@ export class SignalForms {
     breed: 'unknown'
   });
 
-  // colours = Object.entries(Catr)
-
-  registrationForm = form(this.catRegistration);
+  registrationForm = form(this.catRegistration, x => {
+    required(x.name, {message: 'Name is required'})
+  });
 
   breeds = breed;
   colours = colours;
+
+  constructor() {
+    this.registrationForm.name().value().length;
+  }
 
 }
 

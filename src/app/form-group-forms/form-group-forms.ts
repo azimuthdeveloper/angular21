@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {FormControl, FormGroup, ReactiveFormsModule, NonNullableFormBuilder as fb, Validators} from "@angular/forms";
 import {breed, colours} from "../signal-forms/signal-forms";
 import {JsonPipe} from "@angular/common";
 
@@ -15,7 +15,9 @@ import {JsonPipe} from "@angular/common";
 export class FormGroupForms {
 
   formGroup = new FormGroup({
-    name: new FormControl<string>(''),
+    name: new FormControl<string>('', [
+      Validators.required
+    ]),
     breed: new FormControl<typeof breed[number]>('unknown'),
     colours: new FormControl<typeof colours[number]>('black')
   });

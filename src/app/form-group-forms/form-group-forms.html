@@ -25,4 +25,28 @@
     </div>
 </form>
 
-{{formGroup.controls.breed.value.length}}
+<br>
+
+<table>
+  <tr>
+    <th>Form status</th>
+    <th>Form errors</th>
+    <th>Field error</th>
+  </tr>
+  <td>
+    Form status is {{formGroup.status}}
+  </td>
+  <td>
+    Form errors are <pre>{{formGroup.errors | json}}</pre>
+  </td>
+  <td>
+    Field error is <pre>{{formGroup.controls.name.errors | json}}</pre>
+  </td>
+</table>
+
+<br>
+
+<br>
+
+
+<!--{{formGroup.controls.name.value.length}}-->

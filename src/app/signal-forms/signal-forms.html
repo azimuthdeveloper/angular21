@@ -25,4 +25,28 @@
   </div>
 </form>
 
-{{registrationForm.breed().value().length}}
+<table>
+  <tr>
+    <th>Form status</th>
+    <th>Form errors</th>
+    <th>Error summary 🎉🎉🎉</th>
+    <th>Field error</th>
+  </tr>
+  <td>
+    Form status is {{registrationForm().invalid() ? 'invalid' : 'valid'}}
+  </td>
+  <td>
+    Form errors are <pre>{{registrationForm().errors() | json}}</pre>
+  </td>
+  <td>
+    Form errors are <pre>{{registrationForm().errorSummary() | json}}</pre>
+  </td>
+
+  <td>
+    Field error is <pre>{{registrationForm.name().errors | json}}</pre>
+  </td>
+
+<!--  {{registrationForm.name().errors()}}-->
+
+</table>
+

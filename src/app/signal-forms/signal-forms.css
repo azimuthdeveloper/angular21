@@ -1,0 +1,6 @@
+table, th, td {
+  border: 1px solid black; /* Sets the line width, style, and color */
+  border-collapse: collapse; /* Merges the double borders into single ones */
+  padding: 8px; /* Adds space between content and border */
+  text-align: left; /* Aligns text for better readability */
+}
