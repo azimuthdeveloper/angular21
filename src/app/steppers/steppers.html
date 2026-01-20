@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <label>
+      Name:
+      <input formControlName="name" placeholder="Enter name">
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      Level:
+      <app-stepper-cva formControlName="level"></app-stepper-cva>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      Score:
+      <input type="number" formControlName="score">
+    </label>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+
+  <p>Form Value: {{ form.value | json }}</p>
+  <p>Form Valid: {{ form.valid }}</p>
+
+  <button type="button" (click)="resetForm()">Reset</button>
+  <button type="button" (click)="setLevel(7)">Set Level to 7</button>
+</form>

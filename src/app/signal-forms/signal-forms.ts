@@ -25,6 +25,8 @@ export class SignalForms {
   breeds = breed;
   colours = colours;
 
+  // validity = this.registrationForm().co
+
   constructor() {
     this.registrationForm.name().value().length;
   }

@@ -1,0 +1,19 @@
+<div class="stepper">
+  <button
+    type="button"
+    (click)="decrement()"
+    [disabled]="isDisabled || currentValue === 1"
+    class="btn btn-minus">
+    -
+  </button>
+
+  <span class="value">{{ currentValue }}</span>
+
+  <button
+    type="button"
+    (click)="increment()"
+    [disabled]="isDisabled || currentValue === 10"
+    class="btn btn-plus">
+    +
+  </button>
+</div>
