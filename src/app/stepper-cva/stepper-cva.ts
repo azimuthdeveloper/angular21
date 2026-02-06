@@ -18,7 +18,8 @@ export class StepperCva implements ControlValueAccessor {
   currentValue = 1;
   isDisabled = false;
 
-  private onChange: (value: number) => void = () => {};
+  private onChange: (value: number) => void = () => {
+  };
   private onTouched: () => void = () => {};
 
   writeValue(value: number | null): void {
@@ -52,4 +53,11 @@ export class StepperCva implements ControlValueAccessor {
       this.onTouched();
     }
   }
+
+  isEven(num: number): boolean {
+    console.log('isEven called');
+    return num % 2 === 0;
+  }
+
+  // isEven(num: number) => num % 2 === 0;
 }
