@@ -2,21 +2,23 @@
   <button
     type="button"
     (click)="decrement()"
-    [disabled]="isDisabled || currentValue === 1"
+    [disabled]="disabled() || value() === 1"
     class="btn btn-minus">
     -
   </button>
 
-  <span class="value">{{ currentValue }}</span>
+  <span class="value">{{ value() }}</span>
 
   <button
     type="button"
     (click)="increment()"
-    [disabled]="isDisabled || currentValue === 10"
+    [disabled]="disabled() || value() === 10"
     class="btn btn-plus">
     +
   </button>
 
-  The number is {{ isEven(currentValue) ? 'even' : 'odd' }}
+  <div>
+    The number is {{ isEven() ? 'even' : 'odd' }}
+  </div>
 
 </div>
