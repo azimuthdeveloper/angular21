@@ -12,14 +12,6 @@
       <app-stepper-cva formControlName="level"></app-stepper-cva>
     </label>
   </div>
-
-  <div class="form-row">
-    <label>
-      Score:
-      <input type="number" formControlName="score">
-    </label>
-  </div>
-
   <button type="submit" [disabled]="form.invalid">Submit</button>
 
   <p>Form Value: {{ form.value | json }}</p>

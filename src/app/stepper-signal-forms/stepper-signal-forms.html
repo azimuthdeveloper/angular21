@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Stepper - Signal Forms</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        [field]="stepperForm.name()"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Level:</label>
+      <div class="stepper">
+        <button
+          type="button"
+          (click)="decrement()"
+          [disabled]="stepperForm.level().value() === 1"
+          class="btn btn-minus">
+          -
+        </button>
+
+        <span class="value">{{ stepperForm.level().value() }}</span>
+
+        <button
+          type="button"
+          (click)="increment()"
+          [disabled]="stepperForm.level().value() === 10"
+          class="btn btn-plus">
+          +
+        </button>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button type="button" (click)="onSubmit()" class="btn-primary">Submit</button>
+      <button type="button" (click)="resetForm()" class="btn-secondary">Reset</button>
+      <button type="button" (click)="setLevel(5)" class="btn-secondary">Set Level to 5</button>
+    </div>
+  </form>
+
+  <div class="form-value">
+    <h3>Form Value:</h3>
+    <pre>{{ formData() | json }}</pre>
+  </div>
+</div>

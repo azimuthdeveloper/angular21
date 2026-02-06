@@ -19,8 +19,7 @@ export class Steppers {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      level: [5, [Validators.min(1), Validators.max(10)]],  // Initial value 5
-      score: [0]
+      level: [5, [Validators.min(1), Validators.max(10)]]
     });
   }
 
